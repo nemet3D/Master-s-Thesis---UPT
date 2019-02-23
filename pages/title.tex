@@ -18,18 +18,12 @@
   \vspace{15mm}
   \ifthenelse{\pdf@strcmp{\languagename}{english}=0}
   {
-  {\huge\bfseries \getTitle{}}
-
-  \vspace{10mm}
-  {\huge\bfseries \foreignlanguage{romanian}{\getTitleGer{}}}
-  }
-  {
   {\huge\bfseries \getDoctype{}}
 
   \vspace{10mm}
-  {\huge\bfseries \foreignlanguage{english}{\getTitle{}}}
+  {\huge\bfseries \foreignlanguage{romanian}{\getTitleRom{}}}
   }
-  \makeatother
+
 
   \vspace{15mm}
   \begin{tabular}{l l}
@@ -43,7 +37,7 @@
   }{}
   
   \vspace{5mm}
-  {\huge\MakeUppercase{\getSubmissionLocation{}}}\\
+  {\huge{\getSubmissionLocation{}}}\\
   
   \vspace{5mm}
   {\huge\MakeUppercase{\getSubmissionDate}{}}\\
