@@ -1,0 +1,52 @@
+\begin{titlepage}
+  \centering
+
+  \IfFileExists{logos/Logo_UPT.jpg}{%
+    \includegraphics[height=20mm]{logos/Logo_UPT.jpg}
+  }{%
+    \vspace*{20mm}
+  }
+
+  \vspace{5mm}
+  {\huge\MakeUppercase{\getFaculty{}}}\\
+
+  \vspace{5mm}
+  {\large\MakeUppercase{\getUniversity{}}}\\
+
+
+  \makeatletter
+  \vspace{15mm}
+  \ifthenelse{\pdf@strcmp{\languagename}{english}=0}
+  {
+  {\huge\bfseries \getTitle{}}
+
+  \vspace{10mm}
+  {\huge\bfseries \foreignlanguage{romanian}{\getTitleGer{}}}
+  }
+  {
+  {\huge\bfseries \getDoctype{}}
+
+  \vspace{10mm}
+  {\huge\bfseries \foreignlanguage{english}{\getTitle{}}}
+  }
+  \makeatother
+
+  \vspace{15mm}
+  \begin{tabular}{l l}
+    Student masterand:          & \getAuthor{} \\
+    Coordonator stiintific:     & \getAdvisor{} \\
+  \end{tabular}
+
+  \IfFileExists{logos/faculty.png}{%
+    \vfill{}
+    \includegraphics[height=20mm]{logos/faculty.png}
+  }{}
+  
+  \vspace{5mm}
+  {\huge\MakeUppercase{\getSubmissionLocation{}}}\\
+  
+  \vspace{5mm}
+  {\huge\MakeUppercase{\getSubmissionDate}{}}\\
+
+
+\end{titlepage}
