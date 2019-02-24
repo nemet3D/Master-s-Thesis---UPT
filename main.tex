@@ -13,8 +13,8 @@
 \newcommand*{\getDepartment}{Departmentul de Masini Mecanice, Utilaje si Transporturi}
 \newcommand*{\getDoctype}{Disertatie}
 \newcommand*{\getSpecialty}{Hidrodinamica masinilor si sistemelor hidromecanice}
-\newcommand*{\getTitle}{Hydrodinamics of the tandem stator/rotor network of profiles for an energy recovery axial turbine}
-\newcommand*{\getTitleRom}{Hidrodinamica tandemului retelelor de profile stator/rotor pentru turbina axiala de recuperare a energiei}
+\newcommand*{\getTitleEng}{Hydrodinamics of the tandem stator/rotor network of profiles for an energy recovery axial turbine}
+\newcommand*{\getTitle}{Hidrodinamica tandemului retelelor de profile stator/rotor pentru turbina axiala de recuperare a energiei}
 \newcommand*{\getAuthor}{ing. Octavian-Valentin Nemet}
 \newcommand*{\getAdvisor}{Prof.dr.ing. Romeo-Florin Susan-Resiga}
 \newcommand*{\getSubmissionDate}{2019}
@@ -40,15 +40,21 @@
 
 \mainmatter{}
 
-\input{chapters/01_introduction}
-% TODO: add more chapters here
+\input{chapters/01_prezentare}
 
-\appendix{}
+\input{chapters/02_proiectare}
+
+\input{chapters/03_analiza}
+
+\input{chapters/04_curgerea}
+
+%\appendix{}
 
 % TODO: appendix chapter
-\input{pages/appendix}
+%\input{pages/appendix}
 
-\printbibliography{}
+\printbibliography[title=\foreignlanguage{romanian}{Bibliografie}]
+
 
 \input{pages/abstract}
 
