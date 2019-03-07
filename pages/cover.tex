@@ -12,43 +12,38 @@
   \IfFileExists{logos/Logo_UPT.jpg}{%
     \includegraphics[height=20mm]{logos/Logo_UPT.jpg}
   }{%
-    \vspace*{20mm}
+    \vspace*{10mm}
   }
 
   \vspace{5mm}
-  {\huge{\getUniversity{}}}\\
+  {\LARGE{\getUniversity{}}}\\
   
   \vspace{5mm}
-  {\huge{\getFaculty{}}}\\
+  {\LARGE{\getFaculty{}}}\\
   
   \vspace{5mm}
-  {\huge{\getDepartment{}}}\\
+  {\LARGE{\getDepartment{}}}\\
 
-  \vspace{15mm}
-  \makeatletter
-  \ifthenelse{\pdf@strcmp{\languagename}{english}=0}
+  \vfill
   {\huge\bfseries \getDoctype}
-  \makeatother
 
-  \vspace{15mm}
+  \vfill
   \begin{flushleft}
-  {\LARGE \getAdvisor{}}
+  {\large Coordonator științific,}\\
+  {\large \getAdvisor{}}
   \end{flushleft}
 
-  \vspace{15mm}
+  \vspace{5mm}
   \begin{flushright}
-  {\LARGE \getAuthor{}}
+  {\large Student masterand,}\\
+  {\large \getAuthor{}}
   \end{flushright}
 
-  \IfFileExists{logos/faculty.png}{%
-    \vfill{}
-    \includegraphics[height=20mm]{logos/faculty.png}
-  }{}
-  
-  \vspace{5mm}
+
+  \vfill
   {\huge{\getSubmissionLocation{}}}\\
   
   \vspace{5mm}
   {\huge\MakeUppercase{\getSubmissionDate}{}}\\
-  
+
 \end{titlepage}

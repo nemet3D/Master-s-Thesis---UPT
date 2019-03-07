@@ -8,22 +8,22 @@
 \input{settings}
 
 % TODO: change thesis information
-\newcommand*{\getUniversity}{Universitatea POLITEHNICA Timisoara}
-\newcommand*{\getFaculty}{Facultatea de mecanica}
-\newcommand*{\getDepartment}{Departmentul de Masini Mecanice, Utilaje si Transporturi}
-\newcommand*{\getDoctype}{Disertatie}
-\newcommand*{\getTitle}{Hydrodinamics of the tandem stator/rotor network of profiles for an energy recovery axial turbine}
-\newcommand*{\getTitleRom}{Hidrodinamica tandemului retelelor de profile stator/rotor pentru turbina axiala de recuperare a energiei}
-\newcommand*{\getAuthor}{ing.Octavian-Valentin Nemet}
+\newcommand*{\getUniversity}{Universitatea POLITEHNICA Timișoara}
+\newcommand*{\getFaculty}{Facultatea de Mecanica}
+\newcommand*{\getDepartment}{Departamentul de Mașini Mecanice, Utilaje și Transporturi}
+\newcommand*{\getDoctype}{Disertație}
+\newcommand*{\getSpecialty}{Hidrodinamica mașinilor și sistemelor hidromecanice}
+\newcommand*{\getTitleEng}{Hydrodinamics of the tandem stator/rotor network of profiles for an energy recovery axial turbine}
+\newcommand*{\getTitle}{Hidrodinamica tandemului rețelelor de profile stator/rotor pentru turbina axiala de recuperare a energiei}
+\newcommand*{\getAuthor}{Ing. Octavian-Valentin Nemet}
 \newcommand*{\getAdvisor}{Prof.dr.ing. Romeo-Florin Susan-Resiga}
 \newcommand*{\getSubmissionDate}{2019}
-\newcommand*{\getSubmissionLocation}{Timisoara}
+\newcommand*{\getSubmissionLocation}{Timișoara}
 
 \begin{document}
 
 % TODO: decide on used language
-%\selectlanguage{ngerman}
-\selectlanguage{english}
+\selectlanguage{romanian}
 
 % Set page numbering to avoid "destination with the same identifier has been already used" warning for cover page.
 % (see https://en.wikibooks.org/wiki/LaTeX/Hyperlinks#Problems_with_Links_and_Pages).
@@ -33,28 +33,30 @@
 \frontmatter{}
 
 \input{pages/title}
-\input{pages/disclaimer}
+
 \input{pages/acknowledgements} % TODO: if you don't have anyone to thank for or don't wish to publish it, comment this line out.
-\input{pages/abstract}
-\microtypesetup{protrusion=false}
+
 \tableofcontents{}
-\microtypesetup{protrusion=true}
 
 \mainmatter{}
 
-\input{chapters/01_introduction}
-% TODO: add more chapters here
+\input{chapters/01_prezentare}
 
-\appendix{}
+\input{chapters/02_proiectare}
+
+\input{chapters/03_analiza}
+
+\input{chapters/04_curgerea}
+
+%\appendix{}
 
 % TODO: appendix chapter
-\input{pages/appendix}
+%\input{pages/appendix}
 
-\microtypesetup{protrusion=false}
-\listoffigures{}
-\listoftables{}
-\microtypesetup{protrusion=true}
-\printglossaries
-\printbibliography{}
+\input{pages/abstract}
+
+\printbibliography[title=\foreignlanguage{romanian}{Bibliografie}]
+
+\includepdf{pages/Declaratie_de_autenticitate_UPT.pdf}
 
 \end{document}

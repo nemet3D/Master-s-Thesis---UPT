@@ -2,16 +2,8 @@
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[sc]{mathpazo}
-\usepackage[romanian,english]{babel} % english is the same as american or USenglish
-\usepackage{combelow}
-\usepackage{newunicodechar}
-
-\newunicodechar{Ș}{\cb{S}}
-\newunicodechar{ș}{\cb{s}}
-\newunicodechar{Ț}{\cb{T}}
-\newunicodechar{ț}{\cb{t}}
-
+\usepackage{mathptmx}
+\usepackage[romanian]{babel} % english is the same as american or USenglish
 
 \usepackage[autostyle]{csquotes}
 \usepackage[%
@@ -34,7 +26,7 @@
 \usepackage{booktabs} % for better looking table creations, but bad with vertical lines by design (package creator despises vertical lines)
 \usepackage[final]{microtype}
 \usepackage{caption}
-\usepackage[hidelinks]{hyperref} % hidelinks removes colored boxes around references and links
+\usepackage[unicode]{hyperref}
 \usepackage{ifthen} % for comparison of the current language and changing of the thesis layout
 \usepackage{pdftexcmds} % string compare to work with all engines
 \usepackage{paralist} % for condensed enumerations or lists
@@ -47,6 +39,7 @@
 \usepackage{adjustbox} % can center content wider than the \textwidth
 \usepackage{tablefootnote} % for footnotes in tables as \tablefootnote
 \usepackage{threeparttable} % another way to add footnotes as \tablenotes with \item [x] <your footnote> after setting \tnote{x} 
+
 
 
 % https://tex.stackexchange.com/questions/42619/x-mark-to-match-checkmark
