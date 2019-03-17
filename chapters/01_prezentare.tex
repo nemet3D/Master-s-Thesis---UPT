@@ -332,80 +332,8 @@ Valori țintă  & 0.05$\si{m^3/s}$ & 0.15$\si{m^3/s}$ & 10$\si{m}$ & 180$\si{m}$
 \end{table}
 
 
-\subsection{Diametrul turbinei}
+\subsection{Parametrii fundamentali aleși}
 
-Conform lucrării de doctorat a lui Neipp \cite{neipp2017zweistufige} se pot îmbunătății caracteristicile de funcționare pentru o cădere $H$ mai mare mărind diametrul turbinei fata de turbina AXENT ($D_i = 0.14\si{m}$ și un diametru exterior $D_e = 0.18\si{m}$) dezvoltata inițial la Stuttgart. Astfel Neipp ajunge la un diametru exterior $D_e = 0.22\si{m}$ iar aplicând teoria dezvoltata de Susan-Resiga \cite{susanhub} un diametrul interior devine $D_i = 0.188\si{m}$. Pentru calculul teoretic al vitezelor în turbina folosim în continuare aceste valori pentru diametre, precum și debitul de $0.07\si{m^3/s}$, căderea este aleasa la valoarea de $H=24\si{m}$, iar turația este $1500\si{rpm}$.
-
-\clearpage
-
-\subsection{Calcule teoretice a vitezelor}
-
-Considerăm zona de interacțiune a turbinei cu fluidul în trei porțiuni:
-\begin{itemize}
-	\item prima zonă numită zonă amonte stator ZAS
-	\item a doua porțiune: zona stator-rotor numită de acum ZSR
-	\item zona trei sau zona aval rotor ZAR
-\end{itemize}
-
-La ZAS avem viteza axială $V_{a}$ care se menține pe toate cele trei porțiuni considerate ale turbinei, iar valoarea acesteia este:
-
-\begin{equation}
-V_a=\frac{4Q}{\pi(D_{ext}^2-D_{int}^2)}=6.826\si{m/s}
-\end{equation}\\
-
-\In ZSR, avem viteza tangetială $U$:
-
-\begin{equation}
-U=\omega R \text{ sau } \frac{\pi n}{30} \frac{D_{med}}{2}=16.022\si{m/s}
-\end{equation}
-
-Conform ecuației fundamentale a turbomașinilor (ecuația lui Euler) avem viteza absolută la butuc respectiv periferie:
-
-\begin{equation}
-gH=UV_{u}, \text{ sau } gH=\frac{\pi n}{30} \frac{D_{med}}{2} V_{u} \Rightarrow V_{u}=\frac{30gH}{\pi n} \frac{2}{D_{med}}=14.695\si{m/s}
-\end{equation}
-
-
-Unghiul $\alpha_2$ dintre direcția tangențială și viteza absolută $V_u$ este:
-
-\begin{equation}
-arctan(\alpha_{2 })=\frac{V_{a}}{V_{u}} \Rightarrow \alpha_{2}=24.92\si{\degree}
-\end{equation}
-
-
-
-Unghiul $\beta_2$ dintre direcția tangențială și viteza relativă $W_2$ este:
-
-\begin{equation}
-arctan(\beta_{2})=\frac{V_{a}}{U - V_{u}} \Rightarrow \beta_{2} =79.00\si{\degree}
-\end{equation}
-
-
-\subsection{Triunghiurile de viteză}
-
-Triunghiurile de viteză pentru ZSR arată în felul următor:
-
-\begin{figure}[h!]
-	\centering
-	\includegraphics[scale=0.5]{figures/triunghi_viteza_ZSR.jpg}
-	\caption{Triunghi viteză în zona stator-rotor}
-	\label{Triunghi viteză în zona stator-rotor}
-\end{figure}
-
-
-
-Pentru ZAR avem aceleași viteză axială $V_a$ respectiv tangențială $U$. Putem calcula unghiul $\beta_3$ pentru a completa triunghiurile de viteză.
-
-\begin{equation}
-arctan(\beta_{3})=\frac{V_{a}}{U} \Rightarrow \beta_{3} =23.08\si{\degree}
-\end{equation}
-
-\begin{figure}[h!]
-	\centering
-	\includegraphics[scale=0.5]{figures/triunghi_viteza_ZAR.jpg}
-	\caption{Triunghi viteză în zona aval rotor}
-	\label{Triunghi viteză în zona aval rotor}
-\end{figure}
+Conform lucrării de doctorat a lui Neipp \cite{neipp2017zweistufige} se pot îmbunătății caracteristicile de funcționare pentru o cădere $H$ mai mare mărind diametrul turbinei fata de turbina AXENT ($D_i = 0.14\si{m}$ și un diametru exterior $D_e = 0.18\si{m}$) dezvoltata inițial la Stuttgart. Astfel Neipp ajunge la un diametru exterior $D_e = 0.22\si{m}$. Pentru calcululele viitoare folosim în continuare aceste valori pentru diametrul exterior, precum și debitul de $0.07\si{m^3/s}$, căderea este aleasa la valoarea de $H=24\si{m}$, iar turația este $n=1500\si{rpm}$.
 
 \clearpage
-
