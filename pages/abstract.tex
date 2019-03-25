@@ -1,9 +1,17 @@
 \chapter{\abstractname}
 
 %TODO: Abstract
+\makeatletter
+\ifthenelse{\pdf@strcmp{\languagename}{english}=0}
+{\renewcommand{\abstractname}{Rezumat}}
+{\renewcommand{\abstractname}{Abstract}}
+\makeatother
+
+\chapter{\abstractname}
 
 % Undo the name switch
 \makeatletter
-\ifthenelse{\pdf@strcmp{\languagename}{romanian}=0}
+\ifthenelse{\pdf@strcmp{\languagename}{english}=0}
+{\renewcommand{\abstractname}{Abstract}}
 {\renewcommand{\abstractname}{Rezumat}}
 \makeatother

@@ -1,6 +1,13 @@
-\chapter{Proiectare rețele profile}\label{chapter:proiectare}
+\chapter{Proiectare rețele profile de profile subtiri}\label{chapter:proiectare}
 
-\subsection{Calcule teoretice a vitezelor}
+\section{Alegerea razei retelelor}
+
+Pentru proiectarea retelelor de profile se calculeaza intai raza medie a retelelor la care se vor face in continuare calculele triunghiurilor de viteze. Se alege pentru aceasta o raza medie $R_m$ intre raza de periferie si raza de butuc astfel incat debitul dintre cele doua zone sa fie egale:
+
+\begin{equation}
+\frac{Q}{2} = V_a \pi (R_p^2 - R_m^2) \Rightarrow{} R_m = \sqrt{\frac{R_p^2 + R_b^2}{2}} = 
+\end{equation}
+
 
 Considerăm zona de interacțiune a turbinei cu fluidul în trei porțiuni:
 \begin{itemize}
@@ -13,25 +20,25 @@ La ZAS avem viteza axială $V_{a}$ care se menține pe toate cele trei porțiuni
 
 \begin{equation}
 V_a=\frac{Q}{\pi(R_{p}^2-R_{b}^2)}=6.8\si{m/s}
-\end{equation}\\
+\end{equation}
 
 \În ZSR, avem viteza tangențiala $U$:
 
 \begin{equation}
-U=\omega R \text{ sau } \frac{\pi n}{30} \frac{R_{b} + R_{p}}{2}=16.0\si{m/s}
+U=\omega R_m \text{ sau } \frac{\pi n}{30} R_m=16.0\si{m/s}
 \end{equation}
 
 Conform ecuației fundamentale a turbomașinilor (ecuația lui Euler) avem viteza absolută:
 
 \begin{equation}
-gH=UV_{u}, \text{ sau } gH=\frac{\pi n}{30} \frac{R_{b}+R_{p}}{2} V_{u} \Rightarrow V_{u} = \frac{30gH}{\pi n} \frac{2}{R_{b}+R_{p}} = 14.7\si{m/s}
+gH=UV_{u}, \text{ sau } gH=\frac{\pi n}{30} R_m V_{u} \Rightarrow V_{u} = \frac{30gH}{\pi n R_m} = 14.7\si{m/s}
 \end{equation}
 
 
 Unghiul $\alpha_2$ dintre direcția tangențială și viteza absolută $V_u$ este:
 
 \begin{equation}
-arctan(\alpha_{2 })=\frac{V_{a}}{V_{u}} \Rightarrow \alpha_{2}=24.9\si{\degree}
+tan(\alpha_{2 })=\frac{V_{a}}{V_{u}} \Rightarrow \alpha_{2}=65.1\si{\degree}
 \end{equation}
 
 
@@ -39,11 +46,11 @@ arctan(\alpha_{2 })=\frac{V_{a}}{V_{u}} \Rightarrow \alpha_{2}=24.9\si{\degree}
 Unghiul $\beta_2$ dintre direcția tangențială și viteza relativă $W_2$ este:
 
 \begin{equation}
-arctan(\beta_{2})=\frac{V_{a}}{U - V_{u}} \Rightarrow \beta_{2} =79.0\si{\degree}
+tan(\beta_{2})=\frac{U - V_u}{V_a} \Rightarrow \beta_{2} =11.0\si{\degree}
 \end{equation}
 
 
-\subsection{Triunghiurile de viteză}
+\section{Triunghiurile de viteză}
 
 Triunghiurile de viteză pentru ZSR arată în felul următor:
 
@@ -59,10 +66,10 @@ Triunghiurile de viteză pentru ZSR arată în felul următor:
 Pentru ZAR avem aceleași viteză axială $V_a$ respectiv tangențială $U$. Putem calcula unghiul $\beta_3$ pentru a completa triunghiurile de viteză.
 
 \begin{equation}
-arctan(\beta_{3})=\frac{V_{a}}{U} \Rightarrow \beta_{3} =23.1\si{\degree}
+tan(\beta_{3})=\frac{U}{V_a} \Rightarrow \beta_{3} =66.9\si{\degree}
 \end{equation}
 
-\begin{figure}[h!]
+\begin{figure}[t!]
 	\centering
 	\includegraphics[scale=0.5]{figures/triunghi_viteza_ZAR.jpg}
 	\caption{Triunghi viteză în zona aval rotor}
@@ -74,4 +81,4 @@ arctan(\beta_{3})=\frac{V_{a}}{U} \Rightarrow \beta_{3} =23.1\si{\degree}
 
 \section{Adăugare funcție de grosime}
 
-\subsection{Subsection4}
+\subsection{Subsection}

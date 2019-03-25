@@ -51,15 +51,16 @@
 
 \input{chapters/05_curgerea}
 
-%\appendix{}
-
-% TODO: appendix chapter
-%\input{pages/appendix}
-
-\input{pages/abstract}
-
 \printbibliography[title=\foreignlanguage{romanian}{Bibliografie}]
 
-\includepdf{pages/Declaratie_de_autenticitate_UPT.pdf}
+% Add annex
+\input{pages/annex.tex}
+\clearpage
+
+% Add abstract
+\input{pages/abstract}
+
+% Add disclaimer
+\input{pages/disclaimer.tex}
 
 \end{document}
