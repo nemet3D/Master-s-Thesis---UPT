@@ -43,21 +43,24 @@
 
 \input{chapters/01_prezentare}
 
-\input{chapters/02_proiectare}
+\input{chapters/02_butuc}
 
-\input{chapters/03_analiza}
+\input{chapters/03_proiectare}
 
-\input{chapters/04_curgerea}
+\input{chapters/04_analiza}
 
-%\appendix{}
-
-% TODO: appendix chapter
-%\input{pages/appendix}
-
-\input{pages/abstract}
+\input{chapters/05_curgerea}
 
 \printbibliography[title=\foreignlanguage{romanian}{Bibliografie}]
 
-\includepdf{pages/Declaratie_de_autenticitate_UPT.pdf}
+% Add annex
+\input{pages/annex.tex}
+\clearpage
+
+% Add abstract
+\input{pages/abstract}
+
+% Add disclaimer
+\input{pages/disclaimer.tex}
 
 \end{document}
