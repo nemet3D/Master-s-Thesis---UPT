@@ -1,13 +1,6 @@
-\chapter{Proiectare rețele profile de profile subtiri}\label{chapter:proiectare}
+\chapter{Proiectarea rețelei de profile} \label{chapter:proiectarea}
 
-\section{Alegerea razei retelelor}
-
-Pentru proiectarea retelelor de profile se calculeaza intai raza medie a retelelor la care se vor face in continuare calculele triunghiurilor de viteze. Se alege pentru aceasta o raza medie $R_m$ intre raza de periferie si raza de butuc astfel incat debitul dintre cele doua zone sa fie egale:
-
-\begin{equation}
-\frac{Q}{2} = V_a \pi (R_p^2 - R_m^2) \Rightarrow{} R_m = \sqrt{\frac{R_p^2 + R_b^2}{2}} = 
-\end{equation}
-
+\section{Calculul vitezelor}
 
 Considerăm zona de interacțiune a turbinei cu fluidul în trei porțiuni:
 \begin{itemize}
@@ -16,13 +9,28 @@ Considerăm zona de interacțiune a turbinei cu fluidul în trei porțiuni:
 	\item zona trei sau zona aval rotor ZAR
 \end{itemize}
 
-La ZAS avem viteza axială $V_{a}$ care se menține pe toate cele trei porțiuni considerate ale turbinei, iar valoarea acesteia este:
+La ZAS avem doar viteza axială $V_{a}$ din Figura 3.1. care se menține pe toate cele trei porțiuni considerate ale turbinei, iar valoarea acesteia este:
 
 \begin{equation}
 V_a=\frac{Q}{\pi(R_{p}^2-R_{b}^2)}=6.8\si{m/s}
 \end{equation}
 
-\În ZSR, avem viteza tangențiala $U$:
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.4]{figures/triunghi_viteza_ZAS.jpg}
+	\caption{Triunghi viteză în zona aval-stator}
+	\label{Triunghi viteză în zona aval-stator}
+\end{figure}
+
+\subsection{Alegerea razei de calcul a rețelelor}
+
+Pentru proiectarea rețelelor de profile se calculează întâi raza medie a rețelelor la care se vor face în continuare calculele triunghiurilor de viteze. Se alege pentru aceasta o rază medie $R_m$ intre raza de periferie și raza de butuc astfel încât debitul dintre cele doua zone sa fie egale:
+
+\begin{equation}
+\frac{Q}{2} = V_a \pi (R_p^2 - R_m^2) \Rightarrow{} R_m = \sqrt{\frac{R_p^2 + R_b^2}{2}} = 
+\end{equation}
+
+În ZSR, avem viteza tangențiala $U$:
 
 \begin{equation}
 U=\omega R_m \text{ sau } \frac{\pi n}{30} R_m=16.0\si{m/s}
@@ -52,16 +60,16 @@ tan(\beta_{2})=\frac{U - V_u}{V_a} \Rightarrow \beta_{2} =11.0\si{\degree}
 
 \section{Triunghiurile de viteză}
 
-Triunghiurile de viteză pentru ZSR arată în felul următor:
+Triunghiurile de viteză pentru ZSR se prezintă conform figurii 3.2.:
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[scale=0.5]{figures/triunghi_viteza_ZSR.jpg}
+	\includegraphics[scale=0.6]{figures/triunghi_viteza_ZSR.jpg}
 	\caption{Triunghi viteză în zona stator-rotor}
 	\label{Triunghi viteză în zona stator-rotor}
 \end{figure}
 
-
+\clearpage
 
 Pentru ZAR avem aceleași viteză axială $V_a$ respectiv tangențială $U$. Putem calcula unghiul $\beta_3$ pentru a completa triunghiurile de viteză.
 
@@ -69,15 +77,50 @@ Pentru ZAR avem aceleași viteză axială $V_a$ respectiv tangențială $U$. Put
 tan(\beta_{3})=\frac{U}{V_a} \Rightarrow \beta_{3} =66.9\si{\degree}
 \end{equation}
 
-\begin{figure}[t!]
+\begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.5]{figures/triunghi_viteza_ZAR.jpg}
+	\includegraphics[scale=0.6]{figures/triunghi_viteza_ZAR.jpg}
 	\caption{Triunghi viteză în zona aval rotor}
 	\label{Triunghi viteză în zona aval rotor}
 \end{figure}
 
 \clearpage
 
+\section{Alegerea pasului rețelei. Criteriul Zweifel}
+
+Conform monografiei de Mecanica fluidelor și termodinamica turbomașinilor \cite{hall2013fluid}, pentru paletele de turbina există un raport pas-coarda optim care oferă un minim general de pierderi. Figura 3.4. ilustrează modul în care distribuția vitezelor variază în jurul suprafeței unei palete de turbine așezată în serie la trei valori ale pasului relativ.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.35]{figures/pasul_relativ_optim.jpg}
+	\caption{Pasul relativ optim pentru o turbină \cite{hall2013fluid}}
+	\label{Pasul relativ optim pentru o turbină}
+\end{figure}
+
+Pentru distanță mica între palete, fluidul are un ghidaj maxim, dar pierderile prin frecare vor fi mari. Pe de altă parte, cu aceleași palete așezate la un pas mai mare, pierderile prin frecare sunt mici dar, din cauza ghidării slabe a fluidului, pierderile rezultate din separarea curentului sunt ridicate. Datorita acestor consideratii, O. Zweifel \cite{zweifel1945frage} a formulat criteriul pentru raportul optim dintre pas și coardă al turbinei ce au unghiuri mari de deviere.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.5]{figures/distributia_presiunii.jpg}
+	\caption{Distribuție tipică a presiunii în turbină \cite{hall2013fluid}}
+	\label{Distribuție tipică a presiunii în turbină}
+\end{figure}
+
+Figura 3.5. indică o distribuție tipică a presiunii într-o unei retea de palete in turbină cu fluid inconpresibil, curbele P și S corespunzătoare părții de presiune (sau concavă), respectiv aspirație (convexă).
+
+Zweifel a gasit empiric pentru turbine la numere Mach mici urmatoarea formula cu care in functie de unghiurile de intrare si de iesire din rotor putem calcula pasul relativ al retelei:
+
+\begin{equation}
+s/b = 0.4 / [cos^2\alpha_2 (tan\alpha_1 + tan\alpha_2)]
+\end{equation}
+
+În cazul nostru aceasta duce la un rezultat pentru unghiul de intrare $\beta_2$ si unghiul de iesire $\beta_3$ (din rotor) de:
+
+\begin{equation}
+\text{Pasul relativ } s/b \cong 1.05
+\end{equation}
+
+\clearpage
 
 \section{Adăugare funcție de grosime}
 
