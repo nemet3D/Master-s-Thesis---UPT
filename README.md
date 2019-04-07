@@ -1,4 +1,4 @@
-# LaTeX template for UPT theses
+# LaTeX Master's Thesis
 
 This is a LaTeX template created according to the guidelines for UPT MMUT department theses in 2019. **Always check the [current formatting guidelines][thesis-guidelines] before you hand in.** See [`build/main.pdf`][sample-pdf] for an example PDF created with this template.
 
