@@ -12,7 +12,7 @@ Considerăm zona de interacțiune a turbinei cu fluidul în trei porțiuni:
 La ZAS avem doar viteza axială $V_{a}$ din Figura 3.1. care se menține pe toate cele trei porțiuni considerate ale turbinei, iar valoarea acesteia este:
 
 \begin{equation}
-V_a=\frac{Q}{\pi(R_{p}^2-R_{b}^2)}=6.8\si{m/s}
+V_a=\frac{Q}{\pi(R_{p}^2 - R_{b}^2)} = \frac{0.07}{\pi(0.110^2 - 0.094^2)} = 6.8\si{m/s}
 \end{equation}
 
 \begin{figure}[h!]
@@ -27,34 +27,49 @@ V_a=\frac{Q}{\pi(R_{p}^2-R_{b}^2)}=6.8\si{m/s}
 Pentru proiectarea rețelelor de profile se calculează întâi raza medie a rețelelor la care se vor face în continuare calculele triunghiurilor de viteze. Se alege pentru aceasta o rază medie $R_m$ intre raza de periferie și raza de butuc astfel încât debitul dintre cele doua zone sa fie egale:
 
 \begin{equation}
-\frac{Q}{2} = V_a \pi (R_p^2 - R_m^2) \Rightarrow{} R_m = \sqrt{\frac{R_p^2 + R_b^2}{2}} = 
+\frac{Q}{2} = V_a \pi (R_p^2 - R_m^2) 
+\end{equation}
+
+\begin{equation}
+V_a \pi (R_p^2 - R_m^2) = 2 V_a \pi (R_p^2 - R_m^2) 
+\end{equation}
+
+\begin{equation}
+R_p^2 - R_m^2 = 2 R_p^2 - 2 R_m^2
+\end{equation}
+
+\begin{equation}
+R_m = \sqrt{\frac{R_p^2 + R_b^2}{2}} = \sqrt{\frac{0.110^2 + 0.094^2}{2}} = 0.102\si{m}
 \end{equation}
 
 În ZSR, avem viteza tangențiala $U$:
 
 \begin{equation}
-U=\omega R_m \text{ sau } \frac{\pi n}{30} R_m=16.0\si{m/s}
+U = \omega R_m \text{ sau } \frac{\pi n}{30} R_m = \frac{\pi \cdot 1500}{30} 0.102 = 16.0 \si{m/s}
 \end{equation}
 
 Conform ecuației fundamentale a turbomașinilor (ecuația lui Euler) avem viteza absolută:
 
 \begin{equation}
-gH=UV_{u}, \text{ sau } gH=\frac{\pi n}{30} R_m V_{u} \Rightarrow V_{u} = \frac{30gH}{\pi n R_m} = 14.7\si{m/s}
+gH=UV_{u}, \text{ sau } gH=\frac{\pi n}{30} R_m V_{u}
+\end{equation}
+
+\begin{equation}
+V_{u} = \frac{30gH}{\pi n R_m} = \frac{30 \cdot 9.81 \cdot 24 }{\pi \cdot 1500 \cdot 0.102} = 14.7 \si{m/s}
 \end{equation}
 
 
 Unghiul $\alpha_2$ dintre direcția tangențială și viteza absolută $V_u$ este:
 
 \begin{equation}
-tan(\alpha_{2 })=\frac{V_{u}}{V_{a}} \Rightarrow \alpha_{2}=65.1\si{\degree}
+tan(\alpha_{2 })=\frac{V_{u}}{V_{a}} = \frac{14.7}{6.8} \Rightarrow \alpha_{2}=65.1\si{\degree}
 \end{equation}
-
 
 
 Unghiul $\beta_2$ dintre direcția tangențială și viteza relativă $W_2$ este:
 
 \begin{equation}
-tan(\beta_{2})=\frac{U - V_u}{V_a} \Rightarrow \beta_{2} =11.0\si{\degree}
+tan(\beta_{2})=\frac{U - V_u}{V_a} = \frac{16.0 - 14.7}{6.8} \Rightarrow \beta_{2} =11.0\si{\degree}
 \end{equation}
 
 
@@ -64,7 +79,7 @@ Triunghiurile de viteză pentru ZSR se prezintă conform figurii 3.2.:
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[scale=0.6]{figures/triunghi_viteza_ZSR.jpg}
+	\includegraphics[scale=0.4]{figures/triunghi_viteza_ZSR.jpg}
 	\caption{Triunghi viteză în zona stator-rotor}
 	\label{Triunghi viteză în zona stator-rotor}
 \end{figure}
@@ -74,12 +89,12 @@ Triunghiurile de viteză pentru ZSR se prezintă conform figurii 3.2.:
 Pentru ZAR avem aceleași viteză axială $V_a$ respectiv tangențială $U$. Putem calcula unghiul $\beta_3$ pentru a completa triunghiurile de viteză.
 
 \begin{equation}
-tan(\beta_{3})=\frac{U}{V_a} \Rightarrow \beta_{3} =66.9\si{\degree}
+tan(\beta_{3})=\frac{U}{V_a} = \frac{16.0}{6.8} \Rightarrow \beta_{3} =66.9\si{\degree}
 \end{equation}
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.6]{figures/triunghi_viteza_ZAR.jpg}
+	\includegraphics[scale=0.4]{figures/triunghi_viteza_ZAR.jpg}
 	\caption{Triunghi viteză în zona aval rotor}
 	\label{Triunghi viteză în zona aval rotor}
 \end{figure}
@@ -128,12 +143,16 @@ La numere Mach mici, pentru pierderi minime a fost aproximata o valoare a $Z_w =
 \frac{s}{b} = 0.4 \frac{1+tan^2\alpha_2}{tan\alpha_1 + tan\alpha_2}
 \end{equation}
 
+\begin{equation}
+\frac{s}{b} = 0.4 \frac{1 + (V_u / V_a)^2 } {0 + (V_u / V_a)}
+\end{equation}
+
 \vspace{5mm} %5mm vertical space
 
 Pentru stator $tan\alpha_1 = 0$ și ajungem la următorul rezultat:
 
 \begin{equation}
-(s/b)_{stator} \cong 1.05
+(s/b)_{stator} = 0.4 \frac{1 + (14.7 / 6.8)^2 } {0 + (14.7 / 6.8)}\cong 1.05
 \end{equation}
 
 \vspace{5mm} %5mm vertical space
@@ -145,7 +164,11 @@ Pentru rotor avem urmatoarea ecuatie:
 \end{equation}
 
 \begin{equation}
-(s/b)_{rotor} \cong 1.03
+\frac{s}{b} = 0.4 \frac{1 + (U / V_a)^2 } {(U - V_u) / V_a + (V_u / V_a)}
+\end{equation}
+
+\begin{equation}
+(s/b)_{rotor} = 0.4 \frac{1 + (16 / 6.8)^2 } {(16 - 14.7) / 6.8 + (14.7 / 6.8)} \cong 1.03
 \end{equation}
 
 \clearpage
