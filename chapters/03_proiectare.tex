@@ -157,7 +157,7 @@ Pentru stator $tan\alpha_1 = 0$ și ajungem la următorul rezultat:
 
 \vspace{5mm} %5mm vertical space
 
-Pentru rotor avem urmatoarea ecuatie:
+Pentru rotor avem următoarea ecuație:
 
 \begin{equation}
 \frac{s}{b} = 0.4 \frac{1+tan^2\beta_3}{tan\beta_2 + tan\beta_3}
@@ -178,46 +178,29 @@ Pentru rotor avem urmatoarea ecuatie:
 
 \subsection{Legea de încărcare}
 
-
+Putem defini o funcție unitara normalizata de distribuție a presiunii pe paletă bazate pe trei parametrii, obținând un rezultat conform figurii 3.6.
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.5]{figures/legea_de_incarcare.eps}
+	\includegraphics[scale=0.6]{figures/legea_de_incarcare.eps}
 	\caption{Legea de încărcare}
 	\label{Legea de încărcare}
 \end{figure}
 
+Integrând consecutiv funcția de încărcare cu cei trei parametrii aleși, obținem funcțiile din figura 3.7, integrala de ordin întâi reprezentând și estimarea inițială a geometriei paletei obținută numeric pe care o putem optimiza în pasul următor.
 
-\begin{figure}[h]
+\begin{figure}[t]
 	\centering
-	\includegraphics[scale=0.5]{figures/stator_initial_blade.eps}
+	\includegraphics[scale=0.35]{figures/stator_initial_blade.eps}
 	\caption{Varianta inițială a geometriei paletei statorului}
 	\label{Varianta inițială a geometriei paletei statorului}
 \end{figure}
 
-\begin{figure}[h]
-	\centering
-	\includegraphics[scale=0.5]{figures/stator_optimized_blade.eps}
-	\caption{Varianta optimizată a geometriei paletei statorului}
-	\label{Varianta optimizată a geometriei paletei statorului}
-\end{figure}
-
-\clearpage
-
-
-
-\section{Proiectare rotor}
+După optimizarea formei paletei statorului cu ajutorul programului din Anexa A.2.5 obținem rezultatul din figura 3.8. Acești pași se repeta și pentru rotor obținând astfel geometria subțire a acestora, iar în capitolul următor trecem la analiza numerica a rezultatelor obținute în Ansys FLUENT pentru a putea valida rezultatele, urmând ca apoi sa adaugăm și o funcție de grosime pentru profilele subțiri astfel ajungând la un rezultat ce se poate folosi în realitate la o turbina axiala de destindere.
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.5]{figures/stator_initial_blade.eps}
-	\caption{Varianta inițială a geometriei paletei statorului}
-	\label{Varianta inițială a geometriei paletei statorului}
-\end{figure}
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[scale=0.5]{figures/stator_optimized_blade.eps}
+	\includegraphics[scale=0.4]{figures/stator_optimized_blade.eps}
 	\caption{Varianta optimizată a geometriei paletei statorului}
 	\label{Varianta optimizată a geometriei paletei statorului}
 \end{figure}
