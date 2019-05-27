@@ -181,11 +181,17 @@ Pentru rotor avem următoarea ecuație:
 Putem defini o funcție unitară normalizată de distribuție a presiunii pe paletă bazată pe trei parametrii, obținând un rezultat conform figurii 3.6.
 
 \begin{figure}[h]
-	\centering
-	\includegraphics[scale=0.6]{figures/legea_de_incarcare.eps}
-	\caption{Legea de încărcare}
-	\label{Legea de încărcare}
+  \centering
+  \begin{subfigure}{0.4\textwidth}
+    \includegraphics[width=\textwidth]{figures/stator-blade-loading-shape.png}
+  \end{subfigure}
+  \begin{subfigure}{0.41\textwidth}
+    \hspace{2pt}
+    \includegraphics[width=\textwidth]{figures/rotor-blade-loading-shape.png}
+  \end{subfigure}
+  \caption{Legea de încărcare pentru stator (stânga) și rotor (dreapta)}
 \end{figure}
+
 
 Integrând consecutiv funcția de încărcare cu cei trei parametrii aleși, obținem funcțiile din figura 3.7, integrala de ordin întâi reprezentând și estimarea inițială a geometriei paletei obținută numeric pe care o putem optimiza în pasul următor.
 
