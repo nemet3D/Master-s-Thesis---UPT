@@ -1,7 +1,6 @@
+C   thin blade cascade design for minimum maximum velocity
 C   compile and link with SLATEC and LAPACK libraries
 C   -L /opt/local/lib -lslatec -llapack
-
-C   thin blade cascade design for minimum maximum velocity
 
       PROGRAM THINBLADECASCADE
 C   use the BOBYQA algorithm for bound constrained
@@ -53,35 +52,39 @@ C   AXENT stator blades problem setup
 c      VY1=0.0D0 ! AXENT stator inlet
 c      VY2=14.7D0/6.8D0 ! AXENT stator outlet
 c      S=1.05D0 ! from ZWEIFEL criterion
+c      S=1.0D0 ! for tandem cascades calculation
 
 C   AXENT runner blades problem setup
-      VY1=(14.7D0-16.0D0)/6.8D0 ! AXENT runner inlet
-      VY2=-16.0D0/6.8D0 ! AXENT runner outlet
-      S=1.03D0 ! from ZWEIFEL criterion
+      VY1=(14.7D0-16.0D0)/6.8D0 ! AXENT runner inlet WY1
+      VY2=-16.0D0/6.8D0 ! AXENT runner outlet WY2
+C      S=1.03D0 ! from ZWEIFEL criterion
+      S=1.0D0 ! for tandem cascades calculation
 
 C   grid refinement
-      NGRID=76 ! grid refinement
+      NGRID=71 ! grid refinement
 
 C   solution for stator blade
-C   PARAM(1)= 1.821132D1 ! slope LE
-C   PARAM(2)= 3.202183D0 ! slope TE
-C   PARAM(3)= 1.459788D0 ! slope middle
-C   VELMAX  = 2.509556D0 ! maximum velocity on the suction side
+C   PARAM(1)= 1.819118D1 ! slope LE
+C   PARAM(2)= 2.557641D0 ! slope TE
+C   PARAM(3)= 1.888669D0 ! slope middle
+C   VELMAX  = 2.485458D0 ! maximum velocity on the suction side
 
-C   initialize parameters
-c      PARAM(1)= 1.820242D1 ! slope LE
-c      PARAM(2)= 3.201883D0 ! slope TE
-c      PARAM(3)= 1.461346D0 ! slope middle
-      PARAM(1)= 1.530426D1 ! slope LE
-      PARAM(2)= 2.219675D0 ! slope TE
-      PARAM(3)= 1.227281D0 ! slope middle
+C   solution for rotor blade
+C   PARAM(1)= 1.937568D1 ! slope LE
+C   PARAM(2)= 2.099069D0 ! slope TE
+C   PARAM(3)= 1.064037D0 ! slope middle
+C   VELMAX  = 2.633341D0 ! maximum velocity on the suction side
+
+      PARAM(1)= 1.887757D1 ! slope LE
+      PARAM(2)= 2.100988D0 ! slope TE
+      PARAM(3)= 1.073075D0 ! slope middle
 
 C   upper and lower limits
       PARAMLO(1) = 1.0D1
-      PARAMUP(1) = 2.0D1
+      PARAMUP(1) = 3.0D1
       PARAMLO(2) = 1.D0
-      PARAMUP(2) = 5.D1
-      PARAMLO(3) = 1.0D0
+      PARAMUP(2) = 5.D0
+      PARAMLO(3) = 0.0D0
       PARAMUP(3) = 2.0D0
 
 C   setup gridpoints and blade (shape & slope)
@@ -104,11 +107,12 @@ C   expected change to a variable, while RHOEND should indicate the
 C   accuracy that is required in the final values of the variables.
 C   An error return occurs if any of the differences XU(I)-XL(I),
 C   I=1,...,N, is less than 2*RHOBEG.
-      RHOBEG=1.D-2
+      RHOBEG=5.D-1
       RHOEND=1.D-4
       MAXFUN=200
       CALL BOBYQA (NPARAM,NPT,PARAM,PARAMLO,PARAMUP,
      &  RHOBEG,RHOEND,IPRINT,MAXFUN,W)
+C   one more final call for blade design routine
       CALL CALFUN(NPARAM,PARAM,VELMAX)
 
 
@@ -139,10 +143,22 @@ C   plot the initial and the final blade
 C   pressure coefficient with respect to downstream conditions
 C   downstream velocity V2**2=1+VY2**2
 C   cp = 1 - V**2/V2**2
-        WRITE(4,'(2G15.7)') XGRID(IGRID),
-     &  (1.D0-VBLLO(IGRID)**2/(1.D0+VY2**2))
-        WRITE(5,'(2G15.7)') XGRID(IGRID),
-     &  (1.D0-VBLUP(IGRID)**2/(1.D0+VY2**2))
+c        WRITE(4,'(2G15.7)') XGRID(IGRID),
+c     &  (1.D0-VBLLO(IGRID)**2/(1.D0+VY2**2))
+c        WRITE(5,'(2G15.7)') XGRID(IGRID),
+c     &  (1.D0-VBLUP(IGRID)**2/(1.D0+VY2**2))
+
+C   pressure coefficient for stator function of absolute velocity
+      WRITE(4,'(2G15.7)') XGRID(IGRID),
+     &  (1.D0+2.0D0*(16.0D0/6.8D0)*(14.7D0/6.8D0)-VBLLO(IGRID)**2)
+      WRITE(5,'(2G15.7)') XGRID(IGRID),
+     &  (1.D0+2.0D0*(16.0D0/6.8D0)*(14.7D0/6.8D0)-VBLUP(IGRID)**2)
+
+C   pressure coefficient for rotor function of relative velocity
+c      WRITE(4,'(2G15.7)') XGRID(IGRID),
+c     &  (1.D0+(16.0D0/6.8D0)**2-VBLLO(IGRID)**2)
+c      WRITE(5,'(2G15.7)') XGRID(IGRID),
+c     &  (1.D0+(16.0D0/6.8D0)**2-VBLUP(IGRID)**2)
       END DO
       CLOSE(1)
       CLOSE(2)
@@ -338,7 +354,7 @@ C        WRITE(*,'('' RELERR = '',I4,G15.7)') ITER,RELERR
             BLADESHAPEOLD(IGRID)=BLADESHAPENEW(IGRID)
             BLADESLOPEOLD(IGRID)=BLADESLOPENEW(IGRID)
         END DO
-      IF (ITER.GT.30) GO TO 1
+      IF (ITER.GT.30) GO TO 1 ! avoid endless iterations
       END DO
     1 CALL BLADEUPDATE(RELERR) ! one more final update
       WRITE(*,'('' RELERR = '',I4,G15.7)') ITER,RELERR
