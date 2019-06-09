@@ -4,10 +4,34 @@
 
 \section{Figuri}
 
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.4]{figures/stator-CAD.PNG}
+	\caption{Stator}
+	\label{Stator}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.4]{figures/rotor-CAD.PNG}
+	\caption{Rotor}
+	\label{Rotor}
+\end{figure}
+
 \clearpage
 
 
-\section{Cod}
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.4, angle = -90]{figures/assy.jpg}
+	\caption{Ansamblu turbină AXENT}
+	\label{Ansamblu turbină AXENT}
+\end{figure}
+
+\clearpage
+
+
+\section{Programe Fortran de calcul}
 
 \subsection{Rezolvarea ecuației polinomiale cubice}
 
@@ -23,14 +47,14 @@
 \clearpage
 
 
-\subsection{Actualizarea paletei; actualizare pantă și formă paletă}
+\subsection{Corecția iterativă a formei și pantei paletei subțiri}
 
 \lstinputlisting[language=Fortran]{code/bladeupdate.for}
 
 \clearpage
 
 
-\subsection{Calculul magnitudinii vitezei pe paletă}
+\subsection{Calculul modulului vitezei pe fețele paletei}
 
 \lstinputlisting[language=Fortran]{code/bladevelocity.for}
 
@@ -56,5 +80,12 @@
 \subsection{Adăugare funcție de grosime}
 
 \lstinputlisting[language=Fortran]{code/thickblade.for}
+
+\clearpage
+
+
+\section{Prezentare lucrare științifică}
+
+\includepdf[pages={1-}]{pages/AXENT_CIEM2019_Full_Paper_rev08.pdf}
 
 \clearpage

@@ -9,11 +9,14 @@
 
   \centering
 
+  \begin{flushright}
   \IfFileExists{logos/Logo_UPT.jpg}{%
-    \includegraphics[height=20mm]{logos/Logo_UPT.jpg}
-  }{%
+    \includegraphics[height=16mm]{logos/Logo_UPT.jpg}
+  }
+  {%
     \vspace*{10mm}
   }
+  \end{flushright}
 
   \vspace{5mm}
   {\LARGE{\getUniversity{}}}\\
@@ -44,6 +47,6 @@
   {\huge{\getSubmissionLocation{}}}\\
   
   \vspace{5mm}
-  {\huge\MakeUppercase{\getSubmissionDate}{}}\\
+  {\huge{\getSubmissionDate}{}}\\
 
 \end{titlepage}

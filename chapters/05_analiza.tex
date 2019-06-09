@@ -26,7 +26,7 @@ c_p = \frac{p-p_3}{\rho V_a^2 / 2}
 Valoarea absoluta pentru curgerea prin stator fiind:
 
 \begin{equation}
-= 1 + 2 \frac{V_{u2}}{V_a} \frac{U}{V_a} - {\frac{V}{V_a}}^2
+= 1 + 2 \frac{V_{u2}}{V_a} \frac{U}{V_a} - {\Big(\frac{V}{V_a}\Big)}^2
 \end{equation}
 
 În figura 4.2. se poate vedea comparația intre rezultatele obținute numeric și rezultatele din Fluent pentru stator.
@@ -53,10 +53,10 @@ Analog simulării numerice pentru stator se procedează și pentru rotor. În Ga
 
 Se poate observa în figura 4.4 că valorile obținute prin cele două metode, coeficient de presiune cu codul "in-house" precum și cu software-ul profesional ANSYS Fluent, sunt extrem de apropiate, lucru care ne validează rezultatele cu un anumit grad de siguranță, fără sa avem la îndemâna o validare experimentala.
 
-Analog zonei statorului coeficientul de presiune se calculează conform unui parametru "User-defined" introdus manual în ANSYS cu următoarea formula pentru valoarea absoluta in rotor:
+Analog zonei statorului coeficientul de presiune se calculează conform unui parametru "User-defined" introdus manual în ANSYS cu următoarea formula pentru valoarea absoluta în rotor:
 
 \begin{equation}
-c_p = \frac{p-p_3}{\rho V_a^2 / 2} = 1 + 2 \frac{V_{u2}}{V_a} \frac{U}{V_a} - {\frac{V}{V_a}}^2
+c_p = \frac{p-p_3}{\rho V_a^2 / 2} = 1 + {\Big(\frac{U}{V_a}\Big)}^2 - {\Big(\frac{W}{V_a}\Big)}^2
 \end{equation}
 
 

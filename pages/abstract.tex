@@ -4,7 +4,10 @@
 \makeatletter
 \ifthenelse{\pdf@strcmp{\languagename}{english}=0}
 {\renewcommand{\abstractname}{Rezumat}}
-{\renewcommand{\abstractname}{Abstract}}
+{\renewcommand{\abstractname}{Rezumat în limba engleză}}
+Lucrarea prezintă o metodologie de proiectare a paletelor statorului și rotorului pentru o turbină de destindere axială, cu o procedură de optimizare a comportamentului cavitațional.
+Tandemul cu palete subțiri stator-rotor este analizat utilizând simularea fluxului incompresibil și inviscid pentru a valida metoda de proiectare cvasi-analitică și programele de calcul asociate. În cele din urmă, grosimea este adăugată la paleta subțire pentru a asigura integritatea structurală și configurația rezultată este analizată în curgere turbulent.
+
 \makeatother
 
 \chapter{\abstractname}
@@ -12,6 +15,10 @@
 % Undo the name switch
 \makeatletter
 \ifthenelse{\pdf@strcmp{\languagename}{english}=0}
-{\renewcommand{\abstractname}{Abstract}}
+{\renewcommand{\abstractname}{Rezumat în limba engleză}}
 {\renewcommand{\abstractname}{Rezumat}}
+
+The thesis presents a methodology for designing the stator and rotor blades for an axial expansion turbine, with optimisation procedure with respect to cavitation behaviour.
+The resulting stator-rotor thin blades tandem is analysed using unsteady, incompressible and inviscid flow simulation in order to validate the quasi-analytical design method and associated computer code. Finally, thickness is added to  the thin blade (camberline) to insure structural integrity and the resulting configuration is analyzed in turbulent flow.
+
 \makeatother
