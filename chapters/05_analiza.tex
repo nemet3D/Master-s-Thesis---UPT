@@ -8,7 +8,7 @@ Analizăm așadar rezultatele obținute prin optimizare numerică și prin anali
 
 \subsection{Stator}
 
-Pregătirea modelelor începe în Gambit unde aducem geometria profilului și construim banda de periodicitate. Pentru condițiile pe frontiera pregătim fetele geometriei 2D conform figurii 4.1.
+Pregătirea modelelor începe în Gambit unde aducem geometria profilului și construim banda de periodicitate. Pentru condițiile pe frontiera pregătim fetele geometriei 2D conform figurii 5.1..
 
 \begin{figure}[h]
 	\centering
@@ -42,7 +42,7 @@ Valoarea absoluta pentru curgerea prin stator fiind:
 
 \subsection{Rotor}
 
-Analog simulării numerice pentru stator se procedează și pentru rotor. În Gambit sunt pregătite condițiile pe frontiera conform figurii 4.3. și se face discretizarea care urmează sa fie folosita apoi în Fluent.
+Analog simulării numerice pentru stator se procedează și pentru rotor. În Gambit sunt pregătite condițiile pe frontiera conform figurii 5.3. și se face discretizarea care urmează sa fie folosita apoi în Fluent.
 
 \begin{figure}[h]
 	\centering
@@ -51,7 +51,7 @@ Analog simulării numerice pentru stator se procedează și pentru rotor. În Ga
 	\label{Discretizare și condiții pe frontieră pentru rotor în Gambit}
 \end{figure}
 
-Se poate observa în figura 4.4 că valorile obținute prin cele două metode, coeficient de presiune cu codul "in-house" precum și cu software-ul profesional ANSYS Fluent, sunt extrem de apropiate, lucru care ne validează rezultatele cu un anumit grad de siguranță, fără sa avem la îndemâna o validare experimentala.
+Se poate observa în figura 5.4. că valorile obținute prin cele două metode, coeficient de presiune cu codul "in-house" precum și cu software-ul profesional ANSYS Fluent, sunt extrem de apropiate, lucru care ne validează rezultatele cu un anumit grad de siguranță, fără sa avem la îndemâna o validare experimentala.
 
 Analog zonei statorului coeficientul de presiune se calculează conform unui parametru "User-defined" introdus manual în ANSYS cu următoarea formula pentru valoarea absoluta în rotor:
 
@@ -86,8 +86,8 @@ c_p = \frac{p-p_3}{\rho V_a^2 / 2} = 1 + {\Big(\frac{U}{V_a}\Big)}^2 - {\Big(\fr
 \end{figure}
 
 
-În pregătirea simulării numerice pentru cele doua rețele de profile în tandem este nevoie de folosirea unei zone de interfață intre fata "stator out" și "rotor in" conform după cum se poate observa în figura 4.5. Restul condițiilor pe frontiera sunt asemănătoare pregătirii rețelelor de profile singulare în secțiunile precedente.
+În pregătirea simulării numerice pentru cele doua rețele de profile în tandem este nevoie de folosirea unei zone de interfață intre fata "stator out" și "rotor in" conform după cum se poate observa în figura 5.5.. Restul condițiilor pe frontiera sunt asemănătoare pregătirii rețelelor de profile singulare în secțiunile precedente.
 
-Cu ajutorul FLUENT în figura 4.6 se pot observa liniile de curent peste cele două profile precum și triunghiurile de viteze calculate inițial.
+Cu ajutorul FLUENT în figura 5.6. se pot observa liniile de curent peste cele două profile precum și triunghiurile de viteze calculate inițial.
 
 \clearpage
